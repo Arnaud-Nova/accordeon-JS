@@ -25,6 +25,9 @@ h2 {
 .arrow {
     float: right;
 }
+.open .arrow {
+    transform: rotate(90deg);
+}
 .contenu {
     background: #fefefe;
     margin: 0;
