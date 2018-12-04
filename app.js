@@ -1,6 +1,7 @@
 var app = {
   init : function() {
-    app.question = document.querySelector('.titre');
+    app.question = document.querySelectorAll('.titre');
+    console.log(app.question);
     app.question.addEventListener('click', app.openAnswer);
   },
 
