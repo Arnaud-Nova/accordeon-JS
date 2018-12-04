@@ -1,14 +1,23 @@
 var app = {
   init : function() {
     app.question = document.querySelectorAll('.titre');
-    console.log(app.question);
-    app.question.addEventListener('click', app.openAnswer);
+    // Boucle forEach pour lancer le listener sur chaque élément sélectionné par querySelectorALl
+    app.question.forEach(element => {
+      element.addEventListener('click', app.openAnswer);
+    });
+    
+    
+    
   },
 
   openAnswer: function(evt) {
-    console.log(evt);
-    // var classArea = evt.path;
-    // classArea.Array[0] = 'h2.titre.open';
+    // je referme toute les questions
+    app.question.forEach(element => {
+      element.className = 'titre';
+    });
+    // j'ouvre la question cliquée
+    var classArea = evt.path[0];
+    classArea.className = 'titre open';
     
   }
 };
